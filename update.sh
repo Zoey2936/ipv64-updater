@@ -15,8 +15,8 @@ if [ -z "$DUK" ] || ! echo "$DUK" | grep -q "^[A-Za-z0-9]\+$"; then
     sleep inf
 fi
 
-if [ -z "$DUD" ] || ! echo "$DUD" | grep -q "\."; then
-    echo "DUD is unset or invalid, it needs to contain at least one dot."
+if [ -z "$DUDs" ] || ! echo "$DUDs" | grep -q "\."; then
+    echo "DUDs is unset or invalid, it needs to contain at least one dot."
     sleep inf
 fi
 
