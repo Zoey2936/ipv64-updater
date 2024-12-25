@@ -48,10 +48,10 @@ fi
 
 while true; do
     if [ "$IPv4" = "true" ] && [ "$(curl -sS4 https://ipv4.ipv64.net/ipcheck.php?ipv4)" != "$(dig "$DUD" IN A +short +https +tls-ca=/etc/ssl/certs/ca-certificates.crt @1.1.1.1 | grep '^[0-9.]\+$' | sort | head -n1)" ]; then
-        curl -sSL4 https://ipv4.ipv64.net/update.php?key="$DUK"&domain="$DUD" | tee /tmp/IPv4.json
+        curl -sSL4 "https://ipv4.ipv64.net/update.php?key=$DUK&domain=$DUD" | tee /tmp/IPv4.json
     fi
     if [ "$IPv6" = "true" ] && [ "$(curl -sS6 https://ipv6.ipv64.net/ipcheck.php?ipv6)" != "$(dig "$DUD" IN AAAA +short +https +tls-ca=/etc/ssl/certs/ca-certificates.crt @1.1.1.1 | grep '^[0-9a-f:]\+$' | sort | head -n1)" ]; then
-        curl -sSL6 https://ipv6.ipv64.net/update.php?key="$DUK"&domain="$DUD" | tee /tmp/IPv6.json
+        curl -sSL6 "https://ipv6.ipv64.net/update.php?key=$DUK&domain=$DUD" | tee /tmp/IPv6.json
     fi
 
     sleep "$UI"
