@@ -10,7 +10,7 @@ if ! echo "$UI" | grep -q "^[0-9]\+[smhd]\?$"; then
     sleep inf
 fi
 
-if [ -z "$DUK" ] || ! echo "$DUK" | grep -q "^[A-Za-z0-9]{32\}$"; then
+if [ -z "$DUK" ] || ! echo "$DUK" | grep -q "^[A-Za-z0-9]\{32\}$"; then
     echo "DUK is unset or invalid, it can consist of 32 of the following characters, upper letters A-Z, lower letters a-z and numbers 0-9."
     sleep inf
 fi
