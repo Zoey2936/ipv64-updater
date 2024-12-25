@@ -3,7 +3,7 @@ FROM alpine:3.21.0
 COPY update.sh /usr/local/bin/update.sh
 COPY healthcheck.sh /usr/local/bin/healthcheck.sh
 RUN apk upgrade --no-cache -a && \
-    apk add --no-cache ca-certificates tzdata tini curl jq && \
+    apk add --no-cache ca-certificates tzdata tini curl jq bind-tools && \
     chmod -R 777 /tmp
 
 ENV IPv4=true \
