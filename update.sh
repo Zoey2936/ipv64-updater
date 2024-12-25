@@ -11,7 +11,7 @@ if ! echo "$UI" | grep -q "^[0-9]\+[smhd]\?$"; then
 fi
 
 if [ -z "$DUK" ] || ! echo "$DUK" | grep -q "^[A-Za-z0-9]\+$"; then
-    echo "DUK is unset or invalid, it can consist of 32 of the following characters, upper letters A-Z, lower letters a-z and numbers 0-9."
+    echo "DUK is unset or invalid, it can consist of upper letters A-Z, lower letters a-z and numbers 0-9."
     sleep inf
 fi
 
@@ -49,10 +49,10 @@ fi
 while true; do
   for DUD in $DUDs; do
     if [ "$IPv4" = "true" ] && [ "$(curl -sS4 https://ipv4.ipv64.net/ipcheck.php?ipv4)" != "$(dig "$DUD" IN A +short +https +tls-ca=/etc/ssl/certs/ca-certificates.crt @1.1.1.1 | grep '^[0-9.]\+$' | sort | head -n1)" ]; then
-        curl -sSL4 "https://ipv4.ipv64.net/update.php?key=$DUK&domain=$DUD" | tee /tmp/IPv4.json
+        curl -sSL4 "https://ipv4.ipv64.net/nic/update?key=$DUK&domain=$DUD" | tee /tmp/IPv4.json
     fi
     if [ "$IPv6" = "true" ] && [ "$(curl -sS6 https://ipv6.ipv64.net/ipcheck.php?ipv6)" != "$(dig "$DUD" IN AAAA +short +https +tls-ca=/etc/ssl/certs/ca-certificates.crt @1.1.1.1 | grep '^[0-9a-f:]\+$' | sort | head -n1)" ]; then
-        curl -sSL6 "https://ipv6.ipv64.net/update.php?key=$DUK&domain=$DUD" | tee /tmp/IPv6.json
+        curl -sSL6 "https://ipv6.ipv64.net/nic/update?key=$DUK&domain=$DUD" | tee /tmp/IPv6.json
     fi
   done
 
