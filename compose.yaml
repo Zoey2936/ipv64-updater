@@ -5,9 +5,9 @@ services:
     restart: always
     network_mode: host                         # you can use bridge if it support IPv6 or you don't want to use IPv6
     environment:
-      - "TZ=Europe/Berlin"                     # your timezone
-      - "DUK=r23jLIKr6IQwrlU6Wcv4ZxrJePxbd57t" # the api key
-      - "DUD=sub.domain.ipv64.net"             # domain to update
-#      - "UI=5m"                               # interval to update DDNS
-#      - "IPv4=true"                           # enable/disable IPv4, auto disabled if not working
-#      - "IPv6=true"                           # enable/disable IPv6, auto disabled if not working
+      - "TZ=Europe/Berlin"                          # your timezone
+      - "DUK=r23jLIKr6IQwrlU6Wcv4ZxrJePxbd57t"      # the api key
+      - "DUDs=sub.domain.ipv64.net domain.ipv64.de" # domains to update
+#      - "UI=5m"                                    # interval to update DDNS
+#      - "IPv4=true"                                # enable/disable IPv4, auto disabled if not working
+#      - "IPv6=true"                                # enable/disable IPv6, auto disabled if not working
