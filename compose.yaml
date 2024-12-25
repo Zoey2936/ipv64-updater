@@ -7,7 +7,7 @@ services:
     environment:
       - "TZ=Europe/Berlin"                          # your timezone
       - "DUK=r23jLIKr6IQwrlU6Wcv4ZxrJePxbd57t"      # the api key
-      - "DUDs=sub.domain.ipv64.net domain.ipv64.de" # domains to update
+      - "DUDs=sub.domain.ipv64.net domain.ipv64.de" # domain(s) to update
 #      - "UI=5m"                                    # interval to update DDNS
 #      - "IPv4=true"                                # enable/disable IPv4, auto disabled if not working
 #      - "IPv6=true"                                # enable/disable IPv6, auto disabled if not working
