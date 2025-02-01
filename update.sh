@@ -48,10 +48,10 @@ fi
 
 for DUD in $DUDs; do
   if [ "$IPv4" = "true" ]; then
-    curl -sSL4 "https://ipv4.ipv64.net/nic/update?key=$DUK&domain=$DUD" | tee /tmp/IPv4.json
+    curl -sSL4 "https://ipv64.net/update.php?key=$DUK&domain=$DUD" | tee /tmp/IPv4.json
   fi
   if [ "$IPv6" = "true" ]; then
-    curl -sSL6 "https://ipv6.ipv64.net/nic/update?key=$DUK&domain=$DUD" | tee /tmp/IPv6.json
+    curl -sSL6 "https://ipv64.net/update.php?key=$DUK&domain=$DUD" | tee /tmp/IPv6.json
   fi
 done
 
